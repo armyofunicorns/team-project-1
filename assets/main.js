@@ -1,38 +1,49 @@
 
-// function starts when dom loads
-document.addEventListener('DOMContentLoaded', () => {
+// // function starts when dom loads
+// document.addEventListener('DOMContentLoaded', () => {
+
+
     
-// Variables / selectors
-    const startBtn = document.querySelector('.beer-button')
-    const beerName = document.querySelector('.beer-name')
-    const descriptionDisplay = document.querySelector('.description')
-    const pairings = document.querySelector('.food-pairing')
-// fetch beer info from API
-function getData() {
-    fetch('https://api.punkapi.com/v2/beers/random')
-        .then(response => {
-            return response.json()
-        })
-        .then(data => {
-            console.log(data)
-            const name = data[0].name
-            // console.log(name)
-            const description = data[0].description
-            // console.log(description)
-            const foodPairing = data[0].food_pairing
-            // console.log(foodPairing)
+    fetch("https://data.sfgov.org/resource/jjew-r69b.json")
+      .then(response => response.json())
+      .then(result => {
+        //   console.log(result)
+        // Random Truck chosen to display from the Array
+          let randomTruck = result[Math.floor(Math.random() * result.length)];
+        //   The item in the Array that was chosen
+          let ArrayRanNum = Math.floor(Math.random() * result.length)
+          console.log(ArrayRanNum)
+        //   All data for chosen truck
+          console.log(randomTruck)
+        //   Specific data taken from Array
+          const DayOfWeek = randomTruck.dayofweekstr
+          console.log(DayOfWeek)
+          const Starttime = randomTruck.starttime
+          console.log(Starttime)
+          const Endtime = randomTruck.endtime
+          console.log(Endtime)
+          const TruckName = randomTruck.applicant
+          console.log(TruckName)
+          const LocationLat = randomTruck.latitude
+          console.log(LocationLat)
+          const LocationLong = randomTruck.longitude
+          console.log(LocationLong)
+          const FoodType = randomTruck.optionaltext
+          console.log(FoodType)
+          const Address = randomTruck.location
+          const AddressDescription = randomTruck.locationdesc
+          console.log(Address +": "+ AddressDescription)
+          
+        
 
-// insert api info onto page
-            beerName.innerHTML = name 
-            descriptionDisplay.innerHTML = description
-            pairings.innerHTML = foodPairing
-        })
+      });
+    
 
-    }
 
-    startBtn.addEventListener('click', getData)
-})
 
-// name
-// description
-// food pairing
+
+
+// fetch("https://data.sfgov.org/resource/jjew-r69b.json")
+// .then(response => response.text())
+// .then(result => console.log(result))
+// .catch(error => console.log('error', error));
