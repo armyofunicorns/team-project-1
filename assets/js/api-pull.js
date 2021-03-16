@@ -1,12 +1,7 @@
+// Create a simple event listener that invokes the fetch when the button is pressed
 findTruckBtn.addEventListener('click', function() {
-    // console.log(event);
-    // event.preventDefault();
-    // count++;
-    // nums.push(count);
-    // alert(nums);
-    // emailInput.value = "";
 
-
+// Fetch a single food truck
     fetch("https://data.sfgov.org/resource/jjew-r69b.json")
         .then(response => response.json())
         .then(result => {
