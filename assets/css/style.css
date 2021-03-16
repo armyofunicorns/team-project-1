@@ -1,0 +1,22 @@
+
+/* Reset browser variations */
+/* Add a universal selector */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+	height: 100%;
+}
+
+/* Styles */
+.container-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    min-height: 100%;
+    flex-direction: column;
+}
