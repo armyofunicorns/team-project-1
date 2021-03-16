@@ -21,6 +21,9 @@ findTruckBtn.addEventListener('click', function() {
             const Endtime = randomTruck.endtime
             console.log(Endtime)
             const TruckName = randomTruck.applicant
+            
+            // Add this information to the page (temporarily)
+            document.getElementById("truckName").innerHTML = TruckName;
             console.log(TruckName)
             const LocationLat = randomTruck.latitude
             console.log(LocationLat)
@@ -33,4 +36,7 @@ findTruckBtn.addEventListener('click', function() {
             console.log(Address +": "+ AddressDescription)
         
         });
+
+    
+    
 });
