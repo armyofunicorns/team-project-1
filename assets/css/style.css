@@ -9,14 +9,37 @@
 
 html, body {
 	height: 100%;
+    flex: 1;
 }
 
-/* Styles */
-.container-center {
+button {
+    z-index: 2;
+}
+
+/* Styles for UI Elements */
+#container {
     display: flex;
+    min-height: 100%;   
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100%;
-    min-height: 100%;
-    flex-direction: column;
+}
+
+/* Styles for the location properties */
+#truckName {
+    position: absolute;
+    background: yellow;
+    left: 5%;
+    height: 10px;
+    z-index: 3;
+}
+
+/* Styles for Map */
+#map {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 1;
 }

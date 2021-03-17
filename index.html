@@ -15,20 +15,26 @@
     <link rel="stylesheet" href="./assets/css/style.css" />
 </head>
 <body>
-    <div id="truckName"></div>
+    
 
     <!-- Create a container and center the button inside the container -->
-    <div class="container-center">
+    <div id="container">
+        <div id="truckName"></div>
         <button type="button" id="findTruckBtn" class="btn btn-primary" data-mdb-toggle="button" autocomplete="off">
             Find a Truck
         </button>
+        
+        <!-- Google Map -->
+        <div id="map"></div>
     </div>
 
-    <!-- Google Map -->
-    <div id="map"></div>
+    
 
     <!-- MAP -->
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCXp19MqpeiOorhlEZlKGZdVMRasBfOCXI&callback=initMap&libraries=&v=weekly" async></script>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBIwzALxUPNbatRBj3Xi1Uhp0fFzwWNBkE&callback=initMap&libraries=&v=weekly"
+      async
+    ></script>
     <script type="text/javascript" src="./assets/js/api-googlemap.js"></script>
     <!-- API -->
     <script type="text/javascript" src="./assets/js/api-pull.js"></script>

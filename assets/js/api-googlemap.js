@@ -1,39 +1,32 @@
+// Create an array to store the locations of the Google Map
+var marker; 
+var count = 0;
+
+// Array that stores markers
+var markers = [
+  { lat: 37.763441, lng: -122.440453 },
+  { lat: 37.762441, lng: -122.441453 },
+  { lat: 37.733441, lng: -122.440533 },
+]; 
+
+
 // Initialize and add the map
 function initMap() {
-    // The location of Uluru
-    const uluru = { lat: -25.344, lng: 131.036 };
-    // The map, centered at Uluru
-    const map = new google.maps.Map(document.getElementById("map"), {
-      zoom: 4,
-      center: uluru,
-    });
-    // The marker, positioned at Uluru
-    const marker = new google.maps.Marker({
-      position: uluru,
-      map: map,
-    });
-  }
+  var infowindow =  new google.maps.InfoWindow({});
+  
 
-//   function initMap() {
-//     const myLatlng = { lat: -25.363, lng: 131.044 };
-//     const map = new google.maps.Map(document.getElementById("map"), {
-//       zoom: 4,
-//       center: myLatlng,
-//     });
-//     const marker = new google.maps.Marker({
-//       position: myLatlng,
-//       map,
-//       title: "Click to zoom",
-//     });
-//     map.addListener("center_changed", () => {
-//       // 3 seconds after the center of the map has changed, pan back to the
-//       // marker.
-//       window.setTimeout(() => {
-//         map.panTo(marker.getPosition());
-//       }, 3000);
-//     });
-//     marker.addListener("click", () => {
-//       map.setZoom(8);
-//       map.setCenter(marker.getPosition());
-//     });
-//   }
+  // The map, centered at Uluru
+  const map = new google.maps.Map(document.getElementById("map"), {
+    zoom: 14,
+    center: markers[0],
+    mapTypeId: google.maps.MapTypeId.ROADMAP
+  });
+
+  for (count = 0; count < markers.length; count++) (function(count) { 
+    findTruckBtn.onclick = function() {
+        alert(count);
+        marker = new google.maps.Marker({position: markers[count--], map: map,});
+    }
+  })(count);
+
+};
