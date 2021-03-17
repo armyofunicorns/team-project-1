@@ -1,14 +1,12 @@
 
-// var result = titleCase(str)
-// // function starts when dom loads
-// document.addEventListener('DOMContentLoaded', () => {
+// Takes truck name fom API, lowercases the name and capitalizes first letter of each word
   var TruckName = function(str) {
     var result = [];
     
     var words =str.toLowerCase().split(' ');
     for (var i = 0; i < words.length; i++) {
       var word = words[i].split("");
-      
+      // "regular expression" used to excude LLC and INC from being modified
       if (/(?:LLC|INC)/i.test(words[i])) {
         result.push(words[i].toUpperCase())
         continue
@@ -21,79 +19,40 @@
     return result.join(" ");
   };
 
-    // regular expression <----
+    // Fetch API for food truck info from sfgov
     fetch("https://data.sfgov.org/resource/jjew-r69b.json")
       .then(response => response.json())
+      .catch(error => console.log('error', error))
       .then(result => {
-        //   console.log(result)
+        
         // Random Truck chosen to display from the Array
+
           let randomTruck = result[Math.floor(Math.random() * result.length)];
-        //   The item in the Array that was chosen
+
+        //   Choose Random Truck from list of 1000
+
           let ArrayRanNum = Math.floor(Math.random() * result.length)
-          // console.log(ArrayRanNum)
-        //   All data for chosen truck
-          // console.log(randomTruck)
-        //   Specific data taken from Array
-          var DayOfWeek = randomTruck.dayofweekstr
-          // console.log(DayOfWeek)
-          var Starttime = randomTruck.starttime
-          // console.log(Starttime)
-          var Endtime = randomTruck.endtime
-          // console.log(Endtime)
-          var LocationLat = randomTruck.latitude
-          // console.log(LocationLat)
-          var LocationLong = randomTruck.longitude
-          // console.log(LocationLong)
-          var FoodType = randomTruck.optionaltext
-          // console.log(FoodType)
-          var Address = randomTruck.location
-          var AddressDescription = randomTruck.locationdesc
-          // console.log(Address +": "+ AddressDescription)
           
-         
-          console.log(randomTruck.applicant)
+        //   Data for chosen truck          
+        //   Specific data taken from Array
+
+          var DayOfWeek = randomTruck.dayofweekstr
+
+          var Starttime = randomTruck.starttime    
+
+          var Endtime = randomTruck.endtime     
+
+          var LocationLat = randomTruck.latitude
+
+          var LocationLong = randomTruck.longitude
+
+          var FoodType = randomTruck.optionaltext
+
+          var Address = randomTruck.location
+
+          var AddressDescription = randomTruck.locationdesc
+          
+          // Console Log Truck Name
           console.log(TruckName(randomTruck.applicant))         
         })
 
-               
-          
-
-            
-            
-        //   console.log(TruckName)
-          // const TruckNameLower = TruckName.toLowerCase() 
-          // const first = TruckName.charAt(0)
-          // const upper = first.toUpperCase()
-          // const TruckNameFinal = upper + TruckNameLower
-
-
-          // console.log(TruckNameFinal)
-         
-         
-         
-            //   var result = [];
-          //   TruckName = randomTruck.applicant
-          //   var words = str.split(" ");
-          
-          //   for (var i = 0; i < words.length; i++) {
-          //     var word = words[i].split("");
-          
-          //     word[0] = word[0].toUpperCase();
-          
-          //     result.push(word.join(""));
-          //   }
-          
-          //   return result.join(" ");
-          // };
-          
-
-        
-
-
-
-      
-
-// fetch("https://data.sfgov.org/resource/jjew-r69b.json")
-// .then(response => response.text())
-// .then(result => console.log(result))
-// .catch(error => console.log('error', error));
