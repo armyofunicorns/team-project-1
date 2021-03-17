@@ -1,9 +1,27 @@
 
+// var result = titleCase(str)
 // // function starts when dom loads
 // document.addEventListener('DOMContentLoaded', () => {
-
-
+  var TruckName = function(str) {
+    var result = [];
     
+    var words =str.toLowerCase().split(' ');
+    for (var i = 0; i < words.length; i++) {
+      var word = words[i].split("");
+      
+      if (/(?:LLC|INC)/i.test(words[i])) {
+        result.push(words[i].toUpperCase())
+        continue
+      }
+      
+      word[0] = word[0].toUpperCase();
+  
+      result.push(word.join(""));
+    }
+    return result.join(" ");
+  };
+
+    // regular expression <----
     fetch("https://data.sfgov.org/resource/jjew-r69b.json")
       .then(response => response.json())
       .then(result => {
@@ -12,72 +30,68 @@
           let randomTruck = result[Math.floor(Math.random() * result.length)];
         //   The item in the Array that was chosen
           let ArrayRanNum = Math.floor(Math.random() * result.length)
-          console.log(ArrayRanNum)
+          // console.log(ArrayRanNum)
         //   All data for chosen truck
-          console.log(randomTruck)
+          // console.log(randomTruck)
         //   Specific data taken from Array
-          const DayOfWeek = randomTruck.dayofweekstr
-          console.log(DayOfWeek)
-          const Starttime = randomTruck.starttime
-          console.log(Starttime)
-          const Endtime = randomTruck.endtime
-          console.log(Endtime)
-          const TruckName = randomTruck.applicant
-          console.log(TruckName)
-          const LocationLat = randomTruck.latitude
-          console.log(LocationLat)
-          const LocationLong = randomTruck.longitude
-          console.log(LocationLong)
-          const FoodType = randomTruck.optionaltext
-          console.log(FoodType)
-          const Address = randomTruck.location
-          const AddressDescription = randomTruck.locationdesc
-          console.log(Address +": "+ AddressDescription)
+          var DayOfWeek = randomTruck.dayofweekstr
+          // console.log(DayOfWeek)
+          var Starttime = randomTruck.starttime
+          // console.log(Starttime)
+          var Endtime = randomTruck.endtime
+          // console.log(Endtime)
+          var LocationLat = randomTruck.latitude
+          // console.log(LocationLat)
+          var LocationLong = randomTruck.longitude
+          // console.log(LocationLong)
+          var FoodType = randomTruck.optionaltext
+          // console.log(FoodType)
+          var Address = randomTruck.location
+          var AddressDescription = randomTruck.locationdesc
+          // console.log(Address +": "+ AddressDescription)
           
+         
+          console.log(randomTruck.applicant)
+          console.log(TruckName(randomTruck.applicant))         
+        })
+
+               
+          
+
+            
+            
+        //   console.log(TruckName)
+          // const TruckNameLower = TruckName.toLowerCase() 
+          // const first = TruckName.charAt(0)
+          // const upper = first.toUpperCase()
+          // const TruckNameFinal = upper + TruckNameLower
+
+
+          // console.log(TruckNameFinal)
+         
+         
+         
+            //   var result = [];
+          //   TruckName = randomTruck.applicant
+          //   var words = str.split(" ");
+          
+          //   for (var i = 0; i < words.length; i++) {
+          //     var word = words[i].split("");
+          
+          //     word[0] = word[0].toUpperCase();
+          
+          //     result.push(word.join(""));
+          //   }
+          
+          //   return result.join(" ");
+          // };
+          
+
         
 
-      });
-    
 
 
-
-      function initMap() {
-        const map = new google.maps.Map(document.getElementById("map"), {
-          zoom: 8,
-          center: { lat: 40.731, lng: -73.997 },
-        });
-        const geocoder = new google.maps.Geocoder();
-        const infowindow = new google.maps.InfoWindow();
-        document.getElementById("submit").addEventListener("click", () => {
-          geocodeLatLng(geocoder, map, infowindow);
-        });
-      }
       
-      function geocodeLatLng(geocoder, map, infowindow) {
-        const input = document.getElementById("latlng").value;
-        const latlngStr = input.split(",", 2);
-        const latlng = {
-          lat: parseFloat(latlngStr[0]),
-          lng: parseFloat(latlngStr[1]),
-        };
-        geocoder.geocode({ location: latlng }, (results, status) => {
-          if (status === "OK") {
-            if (results[0]) {
-              map.setZoom(11);
-              const marker = new google.maps.Marker({
-                position: latlng,
-                map: map,
-              });
-              infowindow.setContent(results[0].formatted_address);
-              infowindow.open(map, marker);
-            } else {
-              window.alert("No results found");
-            }
-          } else {
-            window.alert("Geocoder failed due to: " + status);
-          }
-        });
-      }
 
 // fetch("https://data.sfgov.org/resource/jjew-r69b.json")
 // .then(response => response.text())
