@@ -8,8 +8,8 @@
     <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.grey-teal.min.css" />
     <link href="https://fonts.googleapis.com/css2?family=Zilla+Slab&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="./assets/css/style2.css">
-    <link rel="icon" href="file:///Users/nicholechristianson/Desktop/demo-project/homework/07-team-project/assets/images/AdobeStock_167004277.jpeg"/>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- <link rel="icon" href="assets\images\AdobeStock_167004277.jpeg"/> -->
 </head>
 <body>
     <div class="navbar">
@@ -23,7 +23,7 @@
           </ul>
     </div>
     <div id="header">
-        <h1>Search Food Trucks</h1>
+        <h1>Search Food Trucks In SF</h1>
     </div>
 
     <div class="container-search">
@@ -31,14 +31,29 @@
         <div class="col-lg-12">
           <nav id="search-bar">
             <form id="search-form">
-              <input id="food-type" type="text" name="search" placeholder="Search...">
-              <button id="food-category-add" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" type="submit">Add +</button>
-              <br>
-              <ul class="food-truck-type-search"></ul>
-              <button id="truck-search" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" type="submit">Search</button>
-              <button id="clear-trucks" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" type="submit">Clear</button>
+              <div class="buttoncenter">
+              <button type="button" id="TruckSearchBtn" class=" mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" type="submit">Find A Food Truck</button>
+            </div> <br>
+              <ul class="nobullets">
+                <li id="truck"></li>
+                <li id="time"></li>
+                <li id="description"></li>
+                <li id="address"></li>
+              </ul>
+              <div class='buttoncenter'>
+              <button type="button" id="food-category-add" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" type="submit">SAVE</button>
+            </div>
+            <div class='buttonclear'>
+              <button type="button" id="clear-trucks" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" type="submit">Clear</button>
+            </div>
+            </form>
+            <form id="SaveList">
+              <ul class='nobullets'>
+
+              </ul>
             </form>
           </nav>
+          
         </div>
       </div>
 
@@ -52,6 +67,6 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <!--my js file is empty - need to link correct-->
-    <script src="assets/script.js"></script>
+    <script src="assets\js\api-pull.js"></script>
 </body>
 </html>

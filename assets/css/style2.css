@@ -1,127 +1,139 @@
 body {
-    background-image: url(file:///Users/nicholechristianson/Desktop/demo-project/homework/07-team-project/nc-branch/assets/images/AdobeStock_167004277.jpeg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-    overflow: auto;
+  background-image: url(../images/AdobeStock_167004277.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  overflow: auto;
 }
 
 .navbar {
-    height: 45px;
+  height: 45px;
 }
 
 a.nav-link {
-    text-decoration: none;
-    padding:0.3em 1.2em;
-    border:0.16em solid #34515e ;
-    border-radius:2em;
-    color:#FFFFFF;
-    text-align:center;
-    transition: all 0.2s;
-    background-color:#201f1f
+  text-decoration: none;
+  padding: 0.3em 1.2em;
+  border: 0.16em solid #34515e;
+  border-radius: 2em;
+  color: #ffffff;
+  text-align: center;
+  transition: all 0.2s;
+  background-color: #201f1f;
 }
 
-a.nav-link:hover{
-    border-color: #34515e;
+a.nav-link:hover {
+  border-color: #34515e;
 }
 
-@media all and (max-width:30em){
-    a.nav-link{
-        display:block;
-        margin:0.2em auto;
-    }
+@media all and (max-width: 30em) {
+  a.nav-link {
+    display: block;
+    margin: 0.2em auto;
+  }
 }
 
 .home {
-    margin-right: 10px;
-    border-radius: 45px;
-    float: left;
-    list-style: none;
+  margin-right: 10px;
+  border-radius: 45px;
+  float: left;
+  list-style: none;
 }
 
 .searchBtn {
-    text-align: center;
-    border-radius: 45px;
-    width: 60px;
-    float: right;
-    list-style: none;
-    padding-right: 2em;
+  text-align: center;
+  border-radius: 45px;
+  width: 60px;
+  float: right;
+  list-style: none;
+  padding-right: 2em;
 }
 
 #header {
-    background-color: #607d8b;
-    font-weight: 900;
-    text-align: center;
-    padding: 35px;
-    opacity: 5;
+  background-color: #607d8b;
+  font-weight: 900;
+  text-align: center;
+  padding: 35px;
+  opacity: 5;
 }
-
 
 /* search.html */
 .container-search {
-    padding: 45px;
-    background-image: url(file:///Users/nicholechristianson/Desktop/demo-project/homework/07-team-project/assets/images/AdobeStock_167004277.jpeg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-    overflow: auto;
+  padding: 45px;
+  /* background-image: url(../images/AdobeStock_167004277.jpeg); */
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  overflow: auto;
 }
 
 #search-bar {
-    background-color: #c7c7c7;
-    display: block;
-    margin-left: 20%;
-    margin-right: 20%;
-    padding: 15px;    
+  background-color: #c7c7c7;
+  display: block;
+  margin-left: 20%;
+  margin-right: 20%;
+  padding: 15px;
 }
 
 #search-form {
-    padding: 20px;
-    
+  padding: 20px;
 }
 
-input[type=text] {
-    width: 130px;
-    -webkit-transition: width 0.4s ease-in-out;
-    transition: width 0.4s ease-in-out;
+input[type="text"] {
+  width: 130px;
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
 }
-  
-input[type=text]:focus {
-    width: 20%;
+
+input[type="text"]:focus {
+  width: 20%;
 }
 
 .results {
-    margin: 25px;
+  margin: 25px;
 }
 
 .result-card {
-    margin: 30px;
-    /*margin-left: 200px;
-    margin-right: 200px;*/
-    background-color: #c7c7c7;
-    border: 5px solid #34515e;
-    text-align: center;
-    padding: 15px;
-    height: 280px;
+  margin: 30px;
+  /*margin-left: 200px;
+      margin-right: 200px;*/
+  background-color: #c7c7c7;
+  border: 5px solid #34515e;
+  text-align: center;
+  padding: 15px;
+  height: 280px;
 }
 
 .details {
-    float: left;
-    margin-right: 30px;
+  float: left;
+  margin-right: 30px;
 }
 /*---------------*/
 
-
-
 #footer {
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    z-index: 0;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  z-index: 0;
 }
 
 #footer-text {
-    font-weight: bold;
+  font-weight: bold;
 }
 
+.nobullets {
+  list-style-type: none;
+}
+
+.buttoncenter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.buttonclear {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 2%;
+}
