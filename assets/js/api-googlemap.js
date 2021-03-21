@@ -9,12 +9,10 @@ var markers = [
   { lat: 37.733441, lng: -122.440533 },
 ]; 
 
-
 // Initialize and add the map
 function initMap() {
   var infowindow =  new google.maps.InfoWindow({});
   
-
   // The map, centered at Uluru
   const map = new google.maps.Map(document.getElementById("map"), {
     zoom: 14,
@@ -24,7 +22,7 @@ function initMap() {
 
   for (count = 0; count < markers.length; count++) (function(count) { 
     findTruckBtn.onclick = function() {
-        alert(count);
+        // alert(count);
         marker = new google.maps.Marker({position: markers[count--], map: map,});
     }
   })(count);
