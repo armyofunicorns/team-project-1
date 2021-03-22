@@ -18,42 +18,31 @@
     </header>
 
     <section id="container">
-
-    </section>
-    
-      <div class="container-search">
-        <div class="row">
-          <div class="col-lg-12">
-            <nav id="search-bar">
-              <form id="search-form">
-                <div class="buttoncenter">
-                <button type="button" id="TruckSearchBtn" class=" mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" type="submit">Find A Food Truck</button>
-              </div> <br>
-                <ul class="nobullets">
-                  <li id="truck"></li>
-                  <li id="time"></li>
-                  <li id="description"></li>
-                  <li id="address"></li>
-                </ul>
-                <div class='buttoncenter'>
-                <button type="button" id="food-category-add" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" type="submit">SAVE</button>
-              </div>
-              <div class='buttonclear'>
-                <button type="button" id="clear-trucks" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" type="submit">Clear</button>
-              </div>
-              </form>
-              <form id="SaveList">
-                <ul class='nobullets'>
-
-                </ul>
-              </form>
-            </nav>
-            
-          </div>
+      <!-- Spot where the data will be presented -->
+      <article id="truckDataContainer" class="hide-div">
+        <button type="button" id="food-category-add" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" type="submit">SAVE</button>
+        <button type="button" id="clear-trucks" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" type="submit">Clear</button>
+        <div id="truckData">
+            <h3 id="truck"></h3>
+            <p class="p-small" id="time"></p>
+            <p id="description"></p>
+            <p id="address"></p>
         </div>
+      </article>
 
-            
-      </div>
+      <!-- Spot where the button to find a truck is -->
+      <article id="truckFind">
+        <button type="button" id="TruckSearchBtn" class=" mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" type="submit">Find A Food Truck</button>
+      </article>
+
+      <!-- Background -->
+      <article id="truckBackground">
+          <img src="./assets/images/background.jpg" alt="Background for SF Food Truck">
+      </article>
+      
+      <!-- Include the map on the page -->
+      <article id="map"></article>
+    </section>
 
       <!-- Include a semantic Footer element -->
       <footer>
@@ -65,9 +54,6 @@
       
       <!-- JS for Map -->
       <script type="text/javascript" src="./assets/js/api-googlemap.js"></script>
-      
-      <!-- JQuery API -->
-      <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
 
       <!-- Link to the SF Gov Food Truck API-->
       <script src="./assets/js/api-pull.js"></script>

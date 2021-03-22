@@ -3,6 +3,10 @@
 // Create a simple event listener that invokes the fetch when the button is pressed
 TruckSearchBtn.addEventListener('click', function() {
 
+  // This turns on the div allowing us to see the truckData
+  var element = document.getElementById("truckData");
+  element.classList.add("show-div");
+
     // Takes truck name fom API, lowercases the name and capitalizes first letter of each word
   var TruckName = function(str) {
     var result = [];
@@ -62,7 +66,8 @@ TruckSearchBtn.addEventListener('click', function() {
           document.getElementById("truck").innerHTML = TruckName(randomTruck.applicant);
           document.getElementById("time").innerHTML = "Open between " +randomTruck.starttime+ " and " +randomTruck.endtime + " on " + randomTruck.dayofweekstr;
           document.getElementById("description").innerHTML = randomTruck.optionaltext;
-          document.getElementById("address").innerHTML = randomTruck.location;
+          document.getElementById("address").innerHTML = randomTruck.location + "<br />" + "San Francisco, CA";
+          
           // Console Log Truck Name
           console.log(TruckName(randomTruck.applicant))         
         })

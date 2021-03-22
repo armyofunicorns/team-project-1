@@ -8,12 +8,8 @@
   box-sizing: border-box;
 }
 
+/* Global styles including a presistent background */
 body {
-  background-image: url('../images/background.jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  overflow: auto;
   color: #232323;
   font-family: Helvetica, Arial, sans-serif;
   font-size: 1rem;
@@ -24,11 +20,11 @@ header {
   background-color: #40322f;
   text-align: center;
   height: 64px;
-  /* width: 100%; */
   display: flex;   
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  z-index: 4;
 }
 
 header h1 {
@@ -50,21 +46,84 @@ footer p {
   font-weight: bold;
 }
 
-
-
-a.nav-link {
-  text-decoration: none;
-  padding: 0.3em 1.2em;
-  border: 0.16em solid #34515e;
-  border-radius: 2em;
-  color: #ffffff;
-  text-align: center;
-  transition: all 0.2s;
-  background-color: #201f1f;
+/* Styles for Map */
+#map {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  bottom: 0;
+  z-index: 1;
 }
 
-a.nav-link:hover {
-  border-color: #34515e;
+/* Styles for where the data will be presented */
+#truckDataContainer {
+  position: absolute;
+  height: 50%;
+  width: 100%;
+  transform: translateY(25%); 
+}
+
+#truckData {
+  margin: 0 auto;
+  padding: 20px;
+  width: 400px;
+  background-color: #40322f;
+}
+
+#truckData h3 {
+  font-size: 3rem;
+  font-weight: bold;
+  text-align: center;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+}
+
+#truckData p {
+  font-size: 1rem;
+  font-weight: normal;
+  text-align: center;
+  color: #fff;
+  margin: 10px 20px;
+}
+
+#truckData .p-small {
+  font-weight: bold;
+  font-size: .75rem;
+  margin: 0;
+}
+
+#truckBackground img {
+  height: 50%;
+  width: 100%;
+  opacity: 1;
+}
+
+#truckFind {
+  position: absolute;
+  top: 49%;
+  display: flex;   
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  z-index: 3;
+}
+
+.show-div {
+  visibility: visible;
+}
+
+.hide-div {
+  visibility: hidden;
+}
+
+/* Styles for the Save and Clear buttons */
+/* Initially need to hide these buttons */
+
+#food-category-add, #clear-trucks {
+  display: none;
 }
 
 @media all and (max-width: 30em) {
@@ -74,21 +133,6 @@ a.nav-link:hover {
   }
 }
 
-.home {
-  margin-right: 10px;
-  border-radius: 45px;
-  float: left;
-  list-style: none;
-}
-
-.searchBtn {
-  text-align: center;
-  border-radius: 45px;
-  width: 60px;
-  float: right;
-  list-style: none;
-  padding-right: 2em;
-}
 
 
 
@@ -143,13 +187,7 @@ input[type="text"]:focus {
   float: left;
   margin-right: 30px;
 }
-/*---------------*/
 
-
-
-.nobullets {
-  list-style-type: none;
-}
 
 .buttoncenter {
   display: flex;

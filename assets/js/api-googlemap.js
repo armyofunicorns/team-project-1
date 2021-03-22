@@ -17,8 +17,6 @@ function initMap() {
     mapTypeId: google.maps.MapTypeId.ROADMAP
   });
   
-  
-
   for (count = 0; count < 1; count++) (function(count) { 
     findTruckBtn.onclick = function() {
         console.log("This is the count: " + count);
