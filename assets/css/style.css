@@ -59,11 +59,13 @@ footer p {
 /* Styles for where the data will be presented */
 #truckDataContainer {
   position: absolute;
-  height: 50%;
+  /* height: 50%; */
   width: 100%;
   transform: translateY(25%); 
 }
 
+/* This is our only element that needs to be adjusted for responsive */
+/* Going to establish a desktop-first approach */
 #truckData {
   margin: 0 auto;
   padding: 20px;
@@ -126,78 +128,11 @@ footer p {
   display: none;
 }
 
-@media all and (max-width: 30em) {
-  a.nav-link {
-    display: block;
-    margin: 0.2em auto;
+@media only screen and (max-width: 768px) {
+  #truckData {
+    margin: 0 auto;
+    padding: 5px;
+    width: 300px;
+    background-color: #40322f;
   }
-}
-
-
-
-
-/* search.html */
-.container-search {
-  padding: 45px;
-  /* background-image: url(../images/AdobeStock_167004277.jpeg); */
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
-  overflow: auto;
-}
-
-#search-bar {
-  background-color: #c7c7c7;
-  display: block;
-  margin-left: 20%;
-  margin-right: 20%;
-  padding: 15px;
-}
-
-#search-form {
-  padding: 20px;
-}
-
-input[type="text"] {
-  width: 130px;
-  -webkit-transition: width 0.4s ease-in-out;
-  transition: width 0.4s ease-in-out;
-}
-
-input[type="text"]:focus {
-  width: 20%;
-}
-
-.results {
-  margin: 25px;
-}
-
-.result-card {
-  margin: 30px;
-  /*margin-left: 200px;
-      margin-right: 200px;*/
-  background-color: #c7c7c7;
-  border: 5px solid #34515e;
-  text-align: center;
-  padding: 15px;
-  height: 280px;
-}
-
-.details {
-  float: left;
-  margin-right: 30px;
-}
-
-
-.buttoncenter {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.buttonclear {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding-top: 2%;
 }

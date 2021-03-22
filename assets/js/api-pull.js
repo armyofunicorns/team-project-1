@@ -1,7 +1,7 @@
 
 
 // Create a simple event listener that invokes the fetch when the button is pressed
-TruckSearchBtn.addEventListener('click', function() {
+findTruckBtn.addEventListener('click', function() {
 
   // This turns on the div allowing us to see the truckData
   var element = document.getElementById("truckData");
@@ -43,24 +43,17 @@ TruckSearchBtn.addEventListener('click', function() {
           
         //   Data for chosen truck          
         //   Specific data taken from Array
-
-          var DayOfWeek = randomTruck.dayofweekstr
-
-          var Starttime = randomTruck.starttime    
-
-          var Endtime = randomTruck.endtime     
-
-          var LocationLat = randomTruck.latitude
-
-          var LocationLong = randomTruck.longitude
-
-          var FoodType = randomTruck.optionaltext
-
-          var Address = randomTruck.location
-
-          var AddressDescription = randomTruck.locationdesc
-
-          let Truck = randomTruck.applicant
+          const DayOfWeek = randomTruck.dayofweekstr;
+          const Starttime = randomTruck.starttime;    
+          const Endtime = randomTruck.endtime;    
+          // const LocationLat = randomTruck.latitude
+          const LocationLat = parseFloat(randomTruck.latitude);
+          // const LocationLong = randomTruck.longitude
+          const LocationLong = parseFloat(randomTruck.longitude);
+          const FoodType = randomTruck.optionaltext;
+          const Address = randomTruck.location;
+          const AddressDescription = randomTruck.locationdesc;
+          const Truck = randomTruck.applicant;
           
           // Insert API info into HTML
           document.getElementById("truck").innerHTML = TruckName(randomTruck.applicant);
@@ -68,12 +61,16 @@ TruckSearchBtn.addEventListener('click', function() {
           document.getElementById("description").innerHTML = randomTruck.optionaltext;
           document.getElementById("address").innerHTML = randomTruck.location + "<br />" + "San Francisco, CA";
           
+          // Validating the lat and long data to build a marker
+          console.log("This is truckNum " + truckNum);
+          markers[truckNum] = { lat: LocationLat, lng: LocationLong };
+          console.log(markers); 
+
           // Console Log Truck Name
           console.log(TruckName(randomTruck.applicant))         
-        })
-    })
+        });
+        truckNum++;
+    });
 
     // On hitting clear button clear local storage
-    clearBtn.addEventListener('click', localStorage.clear())
-
-    // var displayTruck = function
+    // clearBtn.addEventListener('click', localStorage.clear());

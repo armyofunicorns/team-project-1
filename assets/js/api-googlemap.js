@@ -10,13 +10,14 @@ var markers = [];
 function initMap() {
   var infowindow =  new google.maps.InfoWindow({});
   
-  // The map, centered at Uluru
+  // Activate the map and center on cityCenter
   const map = new google.maps.Map(document.getElementById("map"), {
     zoom: 13,
     center: cityCenter,
     mapTypeId: google.maps.MapTypeId.ROADMAP
   });
   
+  // Cycle through and add a marker on each button click
   for (count = 0; count < 1; count++) (function(count) { 
     findTruckBtn.onclick = function() {
         console.log("This is the count: " + count);
