@@ -59,7 +59,7 @@ footer p {
 /* Styles for where the data will be presented */
 #truckDataContainer {
   position: absolute;
-  /* height: 50%; */
+  height: 50%;
   width: 100%;
   transform: translateY(25%); 
 }
@@ -129,6 +129,14 @@ footer p {
 }
 
 @media only screen and (max-width: 768px) {
+  #truckDataContainer {
+    position: absolute;
+    height: 20%;
+    width: 100%;
+    transform: translateY(25%);
+    border: 1px solid red; 
+  }
+
   #truckData {
     margin: 0 auto;
     padding: 5px;

@@ -16,6 +16,14 @@ function initMap() {
     center: cityCenter,
     mapTypeId: google.maps.MapTypeId.ROADMAP
   });
+
+  map.addListener("center_changed", () => {
+    // 3 seconds after the center of the map has changed, pan back to the
+    // marker.
+    window.setTimeout(() => {
+      map.panTo(marker.getPosition());
+    }, 3000);
+  });
   
   // Cycle through and add a marker on each button click
   for (count = 0; count < 1; count++) (function(count) { 

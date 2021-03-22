@@ -1,5 +1,3 @@
-
-
 // Create a simple event listener that invokes the fetch when the button is pressed
 findTruckBtn.addEventListener('click', function() {
 
