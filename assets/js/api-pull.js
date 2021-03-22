@@ -1,6 +1,8 @@
 // Create a simple event listener that invokes the fetch when the button is pressed
 findTruckBtn.addEventListener('click', function() {
 
+truckNum++;
+
 // Fetch a single food truck
     fetch("https://data.sfgov.org/resource/jjew-r69b.json")
         .then(response => response.json())
@@ -24,16 +26,20 @@ findTruckBtn.addEventListener('click', function() {
         // Add this information to the page (temporarily)
             document.getElementById("truckName").innerHTML = TruckName;
             console.log(TruckName)
-            const LocationLat = randomTruck.latitude
+        // Need to convert LocationLat and LocationLong variables from a string to number
+            const LocationLat = parseFloat(randomTruck.latitude);
             console.log(LocationLat)
-            const LocationLong = randomTruck.longitude
+            const LocationLong = parseFloat(randomTruck.longitude);
             console.log(LocationLong)
             const FoodType = randomTruck.optionaltext
             console.log(FoodType)
             const Address = randomTruck.location
             const AddressDescription = randomTruck.locationdesc
             console.log(Address +": "+ AddressDescription)
-            var uluru1 = { lat: LocationLat, lng: LocationLong };
-            console.log(uluru1);
+        // Validating the lat and long data to build a marker
+        
+            console.log(truckNum);
+            markers[truckNum] = { lat: LocationLat, lng: LocationLong };
+            console.log(markers);
         });
 });
