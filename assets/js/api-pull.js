@@ -1,8 +1,6 @@
 // Create a simple event listener that invokes the fetch when the button is pressed
 findTruckBtn.addEventListener('click', function() {
-
-truckNum++;
-
+    
 // Fetch a single food truck
     fetch("https://data.sfgov.org/resource/jjew-r69b.json")
         .then(response => response.json())
@@ -37,9 +35,9 @@ truckNum++;
             const AddressDescription = randomTruck.locationdesc
             console.log(Address +": "+ AddressDescription)
         // Validating the lat and long data to build a marker
-        
-            console.log(truckNum);
+            console.log("This is truckNum " + truckNum);
             markers[truckNum] = { lat: LocationLat, lng: LocationLong };
-            console.log(markers);
+            console.log(markers);    
         });
+        truckNum++;
 });
