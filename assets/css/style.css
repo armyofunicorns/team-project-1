@@ -133,7 +133,21 @@ footer p {
   display: none;
 }
 
-@media only screen and (max-width: 768px) {
+/* This is where the FontAwesome icons are referenced */
+.menu-icons {
+  color: #fff;
+  font-size: 1.5rem;
+  position: absolute;
+  top: 20px;
+  right: 40px;
+}
+
+.save-icon {
+  color: #fff;
+  font-size: 1.5rem;
+}
+
+@media only screen and (max-width: 767px) {
   #truckDataContainer {
     position: absolute;
     height: 20%;
@@ -147,18 +161,4 @@ footer p {
     width: 300px;
     background-color: #40322f;
   }
-}
-
-/* This is where the FontAwesome icons are referenced */
-.menu-icons {
-  color: #fff;
-  font-size: 1.5rem;
-  position: absolute;
-  top: 20px;
-  right: 40px;
-}
-
-.save-icon {
-  color: #ffcc00;
-  font-size: 1.5rem;
 }

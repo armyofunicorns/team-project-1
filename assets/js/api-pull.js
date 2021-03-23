@@ -62,10 +62,10 @@ findTruckBtn.addEventListener('click', function() {
           // Validating the lat and long data to build a marker
           console.log("This is truckNum " + truckNum);
           markers[truckNum] = { lat: LocationLat, lng: LocationLong };
-          console.log(markers); 
-
-          // Console Log Truck Name
-          console.log(TruckName(randomTruck.applicant))         
+          windows[truckNum] = Truck;
+          console.log(markers);
+          console.log(windows); 
+        
         });
         truckNum++;
     });
