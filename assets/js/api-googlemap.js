@@ -24,21 +24,21 @@ function initMap() {
   for (let count = 0; count < 1; count++) (function(marker, count) { 
     // registering an event handler
       findTruckBtn.onclick = function() {
-        console.log("This is the count at start: " + count);
-        // Add the infowindow
-        let infowindow = new google.maps.InfoWindow({
-          // content: infoWindowContent[count],
-          content:
+        
+        // Create a new infowindow variable
+        let infowindowContents = 
           foodTruckName[foodTruckName.length-1] +
           '<br />' +
           '<a href="https://www.google.com/search?q=' + 
           foodTruckAddress[foodTruckAddress.length-1] + 
           '" target="_blank">' +
           'Directions' +
-          '</a>'
-          ,
-        });
+          '</a>';
 
+        // Open infoWindow reference
+        var infowindow = new google.maps.InfoWindow();
+
+        // Create a new map marker
         marker = new google.maps.Marker({
           position: markers[markers.length-1], 
           map: map,
@@ -50,15 +50,19 @@ function initMap() {
           index: count
         });
         
+        // Set an event listener that will open up the infowindow when clicked
         marker.addListener("click", () => {
-            infowindow.open(map, marker);
+          infowindow.setContent(infowindowContents);  
+          infowindow.open(map, marker); 
         });
 
+
+        // Set a function that moves the map after a new marker has been added to map
         window.setTimeout(() => {
           map.panTo(marker.getPosition());
         }, 100);
         map.setZoom(14);
-        count++;
+        // count++;
 
         // Now update the screen
         // Insert API info into HTML
