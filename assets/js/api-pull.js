@@ -32,11 +32,9 @@ findTruckBtn.addEventListener('click', function() {
       .then(result => {
         
         // Random Truck chosen to display from the Array
-
           let randomTruck = result[Math.floor(Math.random() * result.length)];
-
-        //   Choose Random Truck from list of 1000
-
+        
+          //   Choose Random Truck from list of 1000
           let ArrayRanNum = Math.floor(Math.random() * result.length)
           
         //   Data for chosen truck          
@@ -45,9 +43,9 @@ findTruckBtn.addEventListener('click', function() {
           const Starttime = randomTruck.starttime;    
           const Endtime = randomTruck.endtime;    
           // const LocationLat = randomTruck.latitude
-          const LocationLat = parseFloat(randomTruck.latitude);
+          let LocationLat = parseFloat(randomTruck.latitude);
           // const LocationLong = randomTruck.longitude
-          const LocationLong = parseFloat(randomTruck.longitude);
+          let LocationLong = parseFloat(randomTruck.longitude);
           const FoodType = randomTruck.optionaltext;
           const Address = randomTruck.location;
           const AddressDescription = randomTruck.locationdesc;
@@ -59,16 +57,11 @@ findTruckBtn.addEventListener('click', function() {
           document.getElementById("description").innerHTML = randomTruck.optionaltext;
           document.getElementById("address").innerHTML = randomTruck.location + "<br />" + "San Francisco, CA";
           
-          // Validating the lat and long data to build a marker
-          console.log("This is truckNum " + truckNum);
+          // Add data to each array          
           markers[truckNum] = { lat: LocationLat, lng: LocationLong };
-          windows[truckNum] = Truck;
+          infoWindowContent[truckNum] = Truck;
           console.log(markers);
-          console.log(windows); 
-        
+          console.log(infoWindowContent);
         });
         truckNum++;
     });
-
-    // On hitting clear button clear local storage
-    // clearBtn.addEventListener('click', localStorage.clear());
