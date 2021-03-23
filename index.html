@@ -10,12 +10,15 @@
 
         <!-- MD Bootstrap stylesheet -->
         <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.grey-teal.min.css" />
+
+        <!-- Add Fontawesome -->
+        <script src="https://kit.fontawesome.com/66c7bfef61.js" crossorigin="anonymous"></script>
   </head>
   <body>
     <!-- Include a semantic Header element  -->
     <header>
-      <h1>SF Food Trucks </h1>
-      <i class="fas fa-gem fa-7x" style="color: #fff"></i>
+      <h1>SF Food Trucks</h1>
+      <a href="#"><i id="menu-dialog" class="fas fa-list menu-icons"></i></a>
     </header>
 
     <section id="container">
@@ -28,7 +31,9 @@
             <p class="p-small" id="time"></p>
             <p id="description"></p>
             <p id="address"></p>
+            <a href="#"><i id="saveBtn" class="fas fa-star save-icon"></i></a>
         </div>
+        
       </article>
 
       <!-- Spot where the button to find a truck is -->
