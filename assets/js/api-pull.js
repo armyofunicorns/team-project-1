@@ -51,17 +51,17 @@ findTruckBtn.addEventListener('click', function() {
           const AddressDescription = randomTruck.locationdesc;
           const Truck = randomTruck.applicant;
           
-          // Insert API info into HTML
-          document.getElementById("truck").innerHTML = TruckName(randomTruck.applicant);
-          document.getElementById("time").innerHTML = "Open between " +randomTruck.starttime+ " and " +randomTruck.endtime + " on " + randomTruck.dayofweekstr;
-          document.getElementById("description").innerHTML = randomTruck.optionaltext;
-          document.getElementById("address").innerHTML = randomTruck.location + "<br />" + "San Francisco, CA";
-          
           // Add data to each array          
           markers[truckNum] = { lat: LocationLat, lng: LocationLong };
-          infoWindowContent[truckNum] = Truck;
+          foodTruckName[truckNum] = Truck;
+          foodTruckTime[truckNum] = "Open between " +randomTruck.starttime+ " and " +randomTruck.endtime + " on " + randomTruck.dayofweekstr;
+          foodTruckDesc[truckNum] = randomTruck.optionaltext;
+          foodTruckAddress[truckNum] = randomTruck.location + ", " + "San Francisco, CA";
           console.log(markers);
-          console.log(infoWindowContent);
+          console.log(foodTruckName);
+          console.log(foodTruckTime);
+          console.log(foodTruckDesc);
+          console.log(foodTruckAddress);
         });
         truckNum++;
     });

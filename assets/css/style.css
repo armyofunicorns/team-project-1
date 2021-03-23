@@ -16,6 +16,10 @@ body {
 }
 
 /* Global styles */
+a {
+  color: blue;
+}
+
 a:hover {
   opacity: .5;
 }
