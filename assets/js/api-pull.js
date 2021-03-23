@@ -76,9 +76,9 @@ findTruckBtn.addEventListener("click", function () {
         randomTruck.location + "<br />" + "San Francisco, CA";
 
       // Validating the lat and long data to build a marker
-      console.log("This is truckNum " + truckNum);
+      // console.log("This is truckNum " + truckNum);
       markers[truckNum] = { lat: LocationLat, lng: LocationLong };
-      console.log(markers);
+      // console.log(markers);
 
       // Console Log Truck Name
       console.log(TruckName(randomTruck.applicant));
