@@ -16,23 +16,27 @@ PHOTOS OF APPLICATION
 
 Below is the page when first opened by the user:
 
-(photo/screenshot)
+![image](https://user-images.githubusercontent.com/77651165/112252588-a3330400-8c1a-11eb-8642-a2b07a2256d0.png)
+
 
 
 Below shows the page when “find trucks” is clicked on:
 
 
-(photo/screenshot)
+![image](https://user-images.githubusercontent.com/77651165/112252729-daa1b080-8c1a-11eb-832f-d8774a84a435.png)
+
 
 
 Below shows when “favorites” is clicked on: 
 
 
-(photo/screenshot)
+![image](https://user-images.githubusercontent.com/77651165/112252861-07ee5e80-8c1b-11eb-9ea5-56b1df0e3d0d.png)
+
 
 Below shows a list of favorites: 
 
-(photo/screenshot)
+![image](https://user-images.githubusercontent.com/77651165/112253038-4dab2700-8c1b-11eb-9e66-78b6f7b68c80.png)
+
 
 
 
